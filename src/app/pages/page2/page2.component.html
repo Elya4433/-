@@ -1,0 +1,34 @@
+
+    <h1>Товары для животных</h1>
+    <input type="text" placeholder="Поиск по названию" [(ngModel)]="searchTerm" />
+    <button (click)="filterProducts()">Поиск</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Название</th>
+          <th>Цена</th>
+          <th>Описание</th>
+          <th>Действия</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of filteredProducts; let i = index">
+          <td>
+            <input type="text" [(ngModel)]="product.name" />
+          </td>
+          <td>
+            <input type="number" [(ngModel)]="product.price" />
+          </td>
+          <td>
+            <input type="text" [(ngModel)]="product.description" />
+          </td>
+          <td> <input type="rating" [(ngModel)]="product.rating" /></td>
+          <td>
+            <button (click)="deleteProduct(i)">Удалить</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   
+    <button (click)="addProduct()">Добавить товар</button>
+  

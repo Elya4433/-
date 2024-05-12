@@ -1,0 +1,38 @@
+<div>
+    <div>
+      <label>Имя</label>
+      <input name="name" [(ngModel)]="name" (ngModelChange)="onNameChange()" />
+    </div>
+    <div>
+      <label>Фамилия</label>
+      <input name="surname" [(ngModel)]="surname" />
+    </div>
+    <div>
+      <label>Номер телефона</label>
+      <input name="number" [(ngModel)]="number" />
+    </div>
+    <div>
+      <button (click)="addUser()">Добавить</button>
+    </div>
+  </div>
+  <div>
+    <h3>Контактные данные для записи</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Имя</th>
+          <th>Фамилия</th>
+          <th>Номер телефона</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.surname }}</td>
+          <td>{{ user.age }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+
